@@ -50,6 +50,7 @@
             this.lp_btnCancelar = new System.Windows.Forms.Button();
             this.lp_btnModificar = new System.Windows.Forms.Button();
             this.lp_dgListaPersonas = new System.Windows.Forms.DataGridView();
+            this.lp_btnEliminar = new System.Windows.Forms.Button();
             this.lp_gbxSexo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lp_dgListaPersonas)).BeginInit();
             this.SuspendLayout();
@@ -262,17 +263,29 @@
             this.lp_dgListaPersonas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.lp_dgListaPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lp_dgListaPersonas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.lp_dgListaPersonas.Location = new System.Drawing.Point(37, 221);
+            this.lp_dgListaPersonas.Location = new System.Drawing.Point(37, 214);
             this.lp_dgListaPersonas.Name = "lp_dgListaPersonas";
             this.lp_dgListaPersonas.RowTemplate.Height = 28;
             this.lp_dgListaPersonas.Size = new System.Drawing.Size(906, 238);
             this.lp_dgListaPersonas.TabIndex = 21;
+            this.lp_dgListaPersonas.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.lp_dgListaPersonas_RowHeaderMouseClick);
+            // 
+            // lp_btnEliminar
+            // 
+            this.lp_btnEliminar.Location = new System.Drawing.Point(774, 477);
+            this.lp_btnEliminar.Name = "lp_btnEliminar";
+            this.lp_btnEliminar.Size = new System.Drawing.Size(133, 38);
+            this.lp_btnEliminar.TabIndex = 22;
+            this.lp_btnEliminar.Text = "Eliminar";
+            this.lp_btnEliminar.UseVisualStyleBackColor = true;
+            this.lp_btnEliminar.Click += new System.EventHandler(this.lp_btnEliminar_Click);
             // 
             // ListaPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 558);
+            this.Controls.Add(this.lp_btnEliminar);
             this.Controls.Add(this.lp_dgListaPersonas);
             this.Controls.Add(this.lp_btnModificar);
             this.Controls.Add(this.lp_btnCancelar);
@@ -328,5 +341,6 @@
         private System.Windows.Forms.Button lp_btnCancelar;
         private System.Windows.Forms.Button lp_btnModificar;
         public System.Windows.Forms.DataGridView lp_dgListaPersonas;
+        private System.Windows.Forms.Button lp_btnEliminar;
     }
 }

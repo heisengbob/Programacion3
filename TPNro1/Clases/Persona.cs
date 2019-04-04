@@ -11,8 +11,8 @@ namespace Clases
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public char Sexo { get; set; }
-        public string Fnac { get; set; }
-        public string ColorFav { get; set; }
-        //public List<int> MusicaFav;
+        public DateTime Fnac { get; set; }
+        public int ColorFav { get; set; }
+        public List<string> MusicaFav { get; set; }
     }   
 }

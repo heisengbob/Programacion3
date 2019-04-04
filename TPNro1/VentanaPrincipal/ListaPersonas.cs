@@ -20,28 +20,39 @@ namespace VentanaPrincipal
         {
             InitializeComponent();
         }
-        
+        private bool campoVacio()
+        {
+            if (lp_txtApellido.Text == null) return true;
+            if (lp_txtNombre.Text == null) return true;
+            if (lp_cbColorFav.SelectedIndex == -1) return true;
+            if (!lp_rbxFemenino.Checked && !lp_rbxMasculino.Checked) return true;
+            return false;
+        }
         private void lp_btnAgregar_Click(object sender, EventArgs e)
         {
+            if (campoVacio())
+            {
+                MessageBox.Show("COMPLETAR CAMPOS", "ERROR");
+                return;
+            }
             Persona nuepersona = new Persona();
             
             nuepersona.Apellido = lp_txtApellido.Text;
             nuepersona.Nombre = lp_txtNombre.Text;
             nuepersona.Sexo = lp_rbxFemenino.Checked ? 'F' : 'M';
-            nuepersona.Fnac = lp_dtpFechaNac.Text;
+            nuepersona.Fnac = lp_dtpFechaNac.Value;
 
-            //List<int> Musicas = new List<int>();
+            List<string> Musicas = new List<string>();
 
-            //if (lp_cbxMusicaPref1.Checked) Musicas.Add(1);
-            //if (lp_cbxMusicaPref2.Checked) Musicas.Add(2);
-            //if (lp_cbxMusicaPref3.Checked) Musicas.Add(3);
-            //if (lp_cbxMusicaPref4.Checked) Musicas.Add(4);
-            //if (lp_cbxMusicaPref5.Checked) Musicas.Add(5);
-            //if (lp_cbxMusicaPref6.Checked) Musicas.Add(6);
-            //nuepersona.MusicaFav = Musicas;
-            nuepersona.ColorFav = lp_cbColorFav.Text;
-
-
+            if (lp_cbxMusicaPref1.Checked) Musicas.Add("Popular");
+            if (lp_cbxMusicaPref2.Checked) Musicas.Add("Rock");
+            if (lp_cbxMusicaPref3.Checked) Musicas.Add("Academica");
+            if (lp_cbxMusicaPref4.Checked) Musicas.Add("Jazz");
+            if (lp_cbxMusicaPref5.Checked) Musicas.Add("Cumbia");
+            if (lp_cbxMusicaPref6.Checked) Musicas.Add("Electronica");
+            nuepersona.MusicaFav = Musicas;
+            nuepersona.ColorFav = lp_cbColorFav.SelectedIndex;
+            
             listapersonas.Add(nuepersona);
             listaBindeable.ResetBindings();
         }
@@ -53,5 +64,41 @@ namespace VentanaPrincipal
             
         }
 
+        private void lp_btnEliminar_Click(object sender, EventArgs e)
+        {
+            listapersonas.RemoveAt(lp_dgListaPersonas.SelectedRows[0].Index);
+            listaBindeable.ResetBindings();
+        }
+
+        private void lp_dgListaPersonas_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Persona aux = new Persona();
+            aux = listapersonas.ElementAt(lp_dgListaPersonas.SelectedRows[0].Index);
+
+            lp_cbxMusicaPref1.Checked = false;
+            lp_cbxMusicaPref2.Checked = false;
+            lp_cbxMusicaPref3.Checked = false;
+            lp_cbxMusicaPref4.Checked = false;
+            lp_cbxMusicaPref5.Checked = false;
+            lp_cbxMusicaPref6.Checked = false;
+
+            lp_txtApellido.Text = aux.Apellido;
+            lp_txtNombre.Text = aux.Nombre;
+            lp_rbxMasculino.Checked = true;
+            if (aux.Sexo == 'F')
+            {
+                lp_rbxFemenino.Checked = true;
+            }
+            lp_cbColorFav.SelectedIndex = aux.ColorFav;
+            lp_dtpFechaNac.Value = aux.Fnac;
+
+            if (aux.MusicaFav.Contains(lp_cbxMusicaPref1.Text)) lp_cbxMusicaPref1.Checked = true;
+            if (aux.MusicaFav.Contains(lp_cbxMusicaPref2.Text)) lp_cbxMusicaPref2.Checked = true;
+            if (aux.MusicaFav.Contains(lp_cbxMusicaPref3.Text)) lp_cbxMusicaPref3.Checked = true;
+            if (aux.MusicaFav.Contains(lp_cbxMusicaPref4.Text)) lp_cbxMusicaPref4.Checked = true;
+            if (aux.MusicaFav.Contains(lp_cbxMusicaPref5.Text)) lp_cbxMusicaPref5.Checked = true;
+            if (aux.MusicaFav.Contains(lp_cbxMusicaPref6.Text)) lp_cbxMusicaPref6.Checked = true;
+            
+        }
     }
 }
