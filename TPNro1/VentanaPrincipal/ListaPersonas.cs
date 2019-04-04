@@ -15,12 +15,13 @@ namespace VentanaPrincipal
     {
         List<Persona> listapersonas = new List<Persona>();
         BindingList<Persona> listaBindeable;
-        
+
         public ListaPersonas()
         {
             InitializeComponent();
         }
-        private bool campoVacio()
+
+        private bool CampoVacio()
         {
             if (lp_txtApellido.Text == null) return true;
             if (lp_txtNombre.Text == null) return true;
@@ -28,10 +29,10 @@ namespace VentanaPrincipal
             if (!lp_rbxFemenino.Checked && !lp_rbxMasculino.Checked) return true;
             return false;
         }
+
         private Persona CargarDatos()
         {
             Persona nuepersona = new Persona();
-
             nuepersona.Apellido = lp_txtApellido.Text;
             nuepersona.Nombre = lp_txtNombre.Text;
             nuepersona.Sexo = lp_rbxFemenino.Checked ? 'F' : 'M';
@@ -47,15 +48,15 @@ namespace VentanaPrincipal
             nuepersona.ColorFav = lp_cbColorFav.SelectedIndex;
             return nuepersona;   
         }
+
         private void lp_btnAgregar_Click(object sender, EventArgs e)
         {
-            if (campoVacio())
+            if (!CampoVacio())
             {
                 MessageBox.Show("COMPLETAR CAMPOS", "ERROR");
                 return;
             }
-            Persona nuepersona = CargarDatos();
-            listapersonas.Add(nuepersona);
+            listapersonas.Add(CargarDatos());
             listaBindeable.ResetBindings();
         }
 
@@ -105,14 +106,12 @@ namespace VentanaPrincipal
 
         private void lp_btnModificar_Click(object sender, EventArgs e)
         {
-            if (campoVacio())
+            if (!CampoVacio())
             {
                 MessageBox.Show("COMPLETAR CAMPOS", "ERROR");
                 return;
             }
-            Persona nuepersona = CargarDatos();
-            
-            listapersonas.Insert(lp_dgListaPersonas.SelectedRows[0].Index, nuepersona);
+            listapersonas.Insert(lp_dgListaPersonas.SelectedRows[0].Index, CargarDatos());
             listaBindeable.ResetBindings();
         }
 
@@ -130,6 +129,12 @@ namespace VentanaPrincipal
             lp_cbxMusicaPref4.Checked = false;
             lp_cbxMusicaPref5.Checked = false;
             lp_cbxMusicaPref6.Checked = false;
+        }
+
+        private void lp_dtpFechaNac_ValueChanged(object sender, EventArgs e)
+        {
+            System.TimeSpan diff = DateTime.Now.Subtract(lp_dtpFechaNac.Value);
+            lp_lblEdad.Text = "Edad : " + diff.Days / 365;
         }
     }
 }

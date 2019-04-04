@@ -51,13 +51,14 @@
             this.lp_btnModificar = new System.Windows.Forms.Button();
             this.lp_dgListaPersonas = new System.Windows.Forms.DataGridView();
             this.lp_btnEliminar = new System.Windows.Forms.Button();
+            this.lp_lblEdad = new System.Windows.Forms.Label();
             this.lp_gbxSexo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lp_dgListaPersonas)).BeginInit();
             this.SuspendLayout();
             // 
             // lp_txtApellido
             // 
-            this.lp_txtApellido.Location = new System.Drawing.Point(37, 42);
+            this.lp_txtApellido.Location = new System.Drawing.Point(37, 32);
             this.lp_txtApellido.Name = "lp_txtApellido";
             this.lp_txtApellido.Size = new System.Drawing.Size(280, 26);
             this.lp_txtApellido.TabIndex = 0;
@@ -73,8 +74,9 @@
             // 
             this.lp_dtpFechaNac.Location = new System.Drawing.Point(361, 60);
             this.lp_dtpFechaNac.Name = "lp_dtpFechaNac";
-            this.lp_dtpFechaNac.Size = new System.Drawing.Size(279, 26);
+            this.lp_dtpFechaNac.Size = new System.Drawing.Size(334, 26);
             this.lp_dtpFechaNac.TabIndex = 2;
+            this.lp_dtpFechaNac.ValueChanged += new System.EventHandler(this.lp_dtpFechaNac_ValueChanged);
             // 
             // lp_rbxFemenino
             // 
@@ -130,7 +132,7 @@
             "Azul Acero",
             "Azul Cian",
             "Azul Klein"});
-            this.lp_cbColorFav.Location = new System.Drawing.Point(35, 169);
+            this.lp_cbColorFav.Location = new System.Drawing.Point(37, 156);
             this.lp_cbColorFav.Name = "lp_cbColorFav";
             this.lp_cbColorFav.Size = new System.Drawing.Size(121, 28);
             this.lp_cbColorFav.TabIndex = 6;
@@ -138,7 +140,7 @@
             // lp_lblApellido
             // 
             this.lp_lblApellido.AutoSize = true;
-            this.lp_lblApellido.Location = new System.Drawing.Point(33, 17);
+            this.lp_lblApellido.Location = new System.Drawing.Point(33, 9);
             this.lp_lblApellido.Name = "lp_lblApellido";
             this.lp_lblApellido.Size = new System.Drawing.Size(65, 20);
             this.lp_lblApellido.TabIndex = 8;
@@ -174,7 +176,7 @@
             // lp_lblColorFav
             // 
             this.lp_lblColorFav.AutoSize = true;
-            this.lp_lblColorFav.Location = new System.Drawing.Point(33, 135);
+            this.lp_lblColorFav.Location = new System.Drawing.Point(33, 130);
             this.lp_lblColorFav.Name = "lp_lblColorFav";
             this.lp_lblColorFav.Size = new System.Drawing.Size(107, 20);
             this.lp_lblColorFav.TabIndex = 12;
@@ -232,9 +234,9 @@
             // 
             // lp_btnAgregar
             // 
-            this.lp_btnAgregar.Location = new System.Drawing.Point(187, 479);
+            this.lp_btnAgregar.Location = new System.Drawing.Point(145, 479);
             this.lp_btnAgregar.Name = "lp_btnAgregar";
-            this.lp_btnAgregar.Size = new System.Drawing.Size(130, 38);
+            this.lp_btnAgregar.Size = new System.Drawing.Size(172, 52);
             this.lp_btnAgregar.TabIndex = 18;
             this.lp_btnAgregar.Text = "Agregar";
             this.lp_btnAgregar.UseVisualStyleBackColor = true;
@@ -242,9 +244,9 @@
             // 
             // lp_btnCancelar
             // 
-            this.lp_btnCancelar.Location = new System.Drawing.Point(355, 479);
+            this.lp_btnCancelar.Location = new System.Drawing.Point(323, 479);
             this.lp_btnCancelar.Name = "lp_btnCancelar";
-            this.lp_btnCancelar.Size = new System.Drawing.Size(132, 38);
+            this.lp_btnCancelar.Size = new System.Drawing.Size(164, 52);
             this.lp_btnCancelar.TabIndex = 19;
             this.lp_btnCancelar.Text = "Cancelar";
             this.lp_btnCancelar.UseVisualStyleBackColor = true;
@@ -252,9 +254,9 @@
             // 
             // lp_btnModificar
             // 
-            this.lp_btnModificar.Location = new System.Drawing.Point(534, 479);
+            this.lp_btnModificar.Location = new System.Drawing.Point(493, 479);
             this.lp_btnModificar.Name = "lp_btnModificar";
-            this.lp_btnModificar.Size = new System.Drawing.Size(133, 38);
+            this.lp_btnModificar.Size = new System.Drawing.Size(174, 52);
             this.lp_btnModificar.TabIndex = 20;
             this.lp_btnModificar.Text = "Modificar";
             this.lp_btnModificar.UseVisualStyleBackColor = true;
@@ -268,25 +270,37 @@
             this.lp_dgListaPersonas.Location = new System.Drawing.Point(37, 214);
             this.lp_dgListaPersonas.Name = "lp_dgListaPersonas";
             this.lp_dgListaPersonas.RowTemplate.Height = 28;
-            this.lp_dgListaPersonas.Size = new System.Drawing.Size(906, 238);
+            this.lp_dgListaPersonas.Size = new System.Drawing.Size(938, 259);
             this.lp_dgListaPersonas.TabIndex = 21;
             this.lp_dgListaPersonas.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.lp_dgListaPersonas_RowHeaderMouseClick);
             // 
             // lp_btnEliminar
             // 
-            this.lp_btnEliminar.Location = new System.Drawing.Point(706, 479);
+            this.lp_btnEliminar.Location = new System.Drawing.Point(673, 479);
             this.lp_btnEliminar.Name = "lp_btnEliminar";
-            this.lp_btnEliminar.Size = new System.Drawing.Size(133, 38);
+            this.lp_btnEliminar.Size = new System.Drawing.Size(178, 52);
             this.lp_btnEliminar.TabIndex = 22;
             this.lp_btnEliminar.Text = "Eliminar";
             this.lp_btnEliminar.UseVisualStyleBackColor = true;
             this.lp_btnEliminar.Click += new System.EventHandler(this.lp_btnEliminar_Click);
             // 
+            // lp_lblEdad
+            // 
+            this.lp_lblEdad.AutoSize = true;
+            this.lp_lblEdad.Location = new System.Drawing.Point(573, 25);
+            this.lp_lblEdad.Name = "lp_lblEdad";
+            this.lp_lblEdad.Size = new System.Drawing.Size(55, 20);
+            this.lp_lblEdad.TabIndex = 23;
+            this.lp_lblEdad.Text = "Edad :";
+            // 
             // ListaPersonas
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 558);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1228, 704);
+            this.Controls.Add(this.lp_lblEdad);
             this.Controls.Add(this.lp_btnEliminar);
             this.Controls.Add(this.lp_dgListaPersonas);
             this.Controls.Add(this.lp_btnModificar);
@@ -309,6 +323,7 @@
             this.Controls.Add(this.lp_txtNombre);
             this.Controls.Add(this.lp_txtApellido);
             this.Name = "ListaPersonas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ListaPersonas";
             this.Load += new System.EventHandler(this.ListaPersonas_Load);
             this.lp_gbxSexo.ResumeLayout(false);
@@ -320,7 +335,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.TextBox lp_txtApellido;
         private System.Windows.Forms.TextBox lp_txtNombre;
         private System.Windows.Forms.DateTimePicker lp_dtpFechaNac;
@@ -344,5 +358,6 @@
         private System.Windows.Forms.Button lp_btnModificar;
         public System.Windows.Forms.DataGridView lp_dgListaPersonas;
         private System.Windows.Forms.Button lp_btnEliminar;
+        private System.Windows.Forms.Label lp_lblEdad;
     }
 }

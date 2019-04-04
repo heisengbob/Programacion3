@@ -23,7 +23,11 @@ namespace VentanaPrincipal
             
             ListaPersonas grilla = new ListaPersonas();
             grilla.MdiParent = this;
+            grilla.ClientSize = new System.Drawing.Size(1300, 800);
+            grilla.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            grilla.Dock = DockStyle.Fill;
             grilla.Show();
+
 
         }
 
@@ -31,6 +35,9 @@ namespace VentanaPrincipal
         {
             ListaObjetos grilla = new ListaObjetos();
             grilla.MdiParent = this;
+            grilla.ClientSize = new System.Drawing.Size(1300, 800);
+            grilla.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            grilla.Dock = DockStyle.Fill;
             grilla.Show();
         }
     }
