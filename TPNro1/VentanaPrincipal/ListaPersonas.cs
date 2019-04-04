@@ -28,22 +28,15 @@ namespace VentanaPrincipal
             if (!lp_rbxFemenino.Checked && !lp_rbxMasculino.Checked) return true;
             return false;
         }
-        private void lp_btnAgregar_Click(object sender, EventArgs e)
+        private Persona CargarDatos()
         {
-            if (campoVacio())
-            {
-                MessageBox.Show("COMPLETAR CAMPOS", "ERROR");
-                return;
-            }
             Persona nuepersona = new Persona();
-            
+
             nuepersona.Apellido = lp_txtApellido.Text;
             nuepersona.Nombre = lp_txtNombre.Text;
             nuepersona.Sexo = lp_rbxFemenino.Checked ? 'F' : 'M';
             nuepersona.Fnac = lp_dtpFechaNac.Value;
-
             List<string> Musicas = new List<string>();
-
             if (lp_cbxMusicaPref1.Checked) Musicas.Add("Popular");
             if (lp_cbxMusicaPref2.Checked) Musicas.Add("Rock");
             if (lp_cbxMusicaPref3.Checked) Musicas.Add("Academica");
@@ -52,7 +45,16 @@ namespace VentanaPrincipal
             if (lp_cbxMusicaPref6.Checked) Musicas.Add("Electronica");
             nuepersona.MusicaFav = Musicas;
             nuepersona.ColorFav = lp_cbColorFav.SelectedIndex;
-            
+            return nuepersona;   
+        }
+        private void lp_btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (campoVacio())
+            {
+                MessageBox.Show("COMPLETAR CAMPOS", "ERROR");
+                return;
+            }
+            Persona nuepersona = CargarDatos();
             listapersonas.Add(nuepersona);
             listaBindeable.ResetBindings();
         }
@@ -99,6 +101,35 @@ namespace VentanaPrincipal
             if (aux.MusicaFav.Contains(lp_cbxMusicaPref5.Text)) lp_cbxMusicaPref5.Checked = true;
             if (aux.MusicaFav.Contains(lp_cbxMusicaPref6.Text)) lp_cbxMusicaPref6.Checked = true;
             
+        }
+
+        private void lp_btnModificar_Click(object sender, EventArgs e)
+        {
+            if (campoVacio())
+            {
+                MessageBox.Show("COMPLETAR CAMPOS", "ERROR");
+                return;
+            }
+            Persona nuepersona = CargarDatos();
+            
+            listapersonas.Insert(lp_dgListaPersonas.SelectedRows[0].Index, nuepersona);
+            listaBindeable.ResetBindings();
+        }
+
+        private void lp_btnCancelar_Click(object sender, EventArgs e)
+        {
+            lp_txtApellido.Text = "";
+            lp_txtNombre.Text = "";
+            lp_dtpFechaNac.ResetText();
+            lp_cbColorFav.SelectedIndex = -1;
+            lp_rbxFemenino.Checked = false;
+            lp_rbxMasculino.Checked = false;
+            lp_cbxMusicaPref1.Checked = false;
+            lp_cbxMusicaPref2.Checked = false;
+            lp_cbxMusicaPref3.Checked = false;
+            lp_cbxMusicaPref4.Checked = false;
+            lp_cbxMusicaPref5.Checked = false;
+            lp_cbxMusicaPref6.Checked = false;
         }
     }
 }

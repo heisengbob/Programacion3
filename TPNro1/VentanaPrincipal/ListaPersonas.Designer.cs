@@ -232,7 +232,7 @@
             // 
             // lp_btnAgregar
             // 
-            this.lp_btnAgregar.Location = new System.Drawing.Point(273, 477);
+            this.lp_btnAgregar.Location = new System.Drawing.Point(187, 479);
             this.lp_btnAgregar.Name = "lp_btnAgregar";
             this.lp_btnAgregar.Size = new System.Drawing.Size(130, 38);
             this.lp_btnAgregar.TabIndex = 18;
@@ -242,21 +242,23 @@
             // 
             // lp_btnCancelar
             // 
-            this.lp_btnCancelar.Location = new System.Drawing.Point(441, 477);
+            this.lp_btnCancelar.Location = new System.Drawing.Point(355, 479);
             this.lp_btnCancelar.Name = "lp_btnCancelar";
             this.lp_btnCancelar.Size = new System.Drawing.Size(132, 38);
             this.lp_btnCancelar.TabIndex = 19;
             this.lp_btnCancelar.Text = "Cancelar";
             this.lp_btnCancelar.UseVisualStyleBackColor = true;
+            this.lp_btnCancelar.Click += new System.EventHandler(this.lp_btnCancelar_Click);
             // 
             // lp_btnModificar
             // 
-            this.lp_btnModificar.Location = new System.Drawing.Point(611, 477);
+            this.lp_btnModificar.Location = new System.Drawing.Point(534, 479);
             this.lp_btnModificar.Name = "lp_btnModificar";
             this.lp_btnModificar.Size = new System.Drawing.Size(133, 38);
             this.lp_btnModificar.TabIndex = 20;
             this.lp_btnModificar.Text = "Modificar";
             this.lp_btnModificar.UseVisualStyleBackColor = true;
+            this.lp_btnModificar.Click += new System.EventHandler(this.lp_btnModificar_Click);
             // 
             // lp_dgListaPersonas
             // 
@@ -272,7 +274,7 @@
             // 
             // lp_btnEliminar
             // 
-            this.lp_btnEliminar.Location = new System.Drawing.Point(774, 477);
+            this.lp_btnEliminar.Location = new System.Drawing.Point(706, 479);
             this.lp_btnEliminar.Name = "lp_btnEliminar";
             this.lp_btnEliminar.Size = new System.Drawing.Size(133, 38);
             this.lp_btnEliminar.TabIndex = 22;
