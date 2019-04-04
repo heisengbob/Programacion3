@@ -51,7 +51,7 @@ namespace VentanaPrincipal
 
         private void lp_btnAgregar_Click(object sender, EventArgs e)
         {
-            if (!CampoVacio())
+            if (CampoVacio())
             {
                 MessageBox.Show("COMPLETAR CAMPOS", "ERROR");
                 return;
@@ -106,12 +106,13 @@ namespace VentanaPrincipal
 
         private void lp_btnModificar_Click(object sender, EventArgs e)
         {
-            if (!CampoVacio())
+            if (CampoVacio())
             {
                 MessageBox.Show("COMPLETAR CAMPOS", "ERROR");
                 return;
             }
             listapersonas.Insert(lp_dgListaPersonas.SelectedRows[0].Index, CargarDatos());
+            listapersonas.RemoveAt(lp_dgListaPersonas.SelectedRows[0].Index + 1);
             listaBindeable.ResetBindings();
         }
 

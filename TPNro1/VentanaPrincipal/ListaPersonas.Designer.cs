@@ -134,7 +134,7 @@
             "Azul Klein"});
             this.lp_cbColorFav.Location = new System.Drawing.Point(37, 156);
             this.lp_cbColorFav.Name = "lp_cbColorFav";
-            this.lp_cbColorFav.Size = new System.Drawing.Size(121, 28);
+            this.lp_cbColorFav.Size = new System.Drawing.Size(280, 28);
             this.lp_cbColorFav.TabIndex = 6;
             // 
             // lp_lblApellido
