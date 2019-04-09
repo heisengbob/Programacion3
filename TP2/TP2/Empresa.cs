@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace TP2
 {
-    public class Lado
+    public class Empresa
     {
-
+        public string RazonSocial;
+        public int CUIT;
+        public string Direccion;
     }
 }

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace TP2
 {
-    public class Lado
+    class CategoriasProv
     {
-
+        public int id;
+        public string descripcion;
     }
 }

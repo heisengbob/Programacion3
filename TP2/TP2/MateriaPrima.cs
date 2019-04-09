@@ -8,5 +8,7 @@ namespace TP2
 {
     public class MateriaPrima : Productos
     {
+        public int id;
+        public string Descripcion;
     }
 }

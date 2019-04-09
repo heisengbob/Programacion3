@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TP2
-{
-    public class Lado
+{ 
+    class Empleados : Persona
     {
-
+        public int Categoria;
+        public float Sueldo;
+        public DateTime FIngreso;
     }
 }
