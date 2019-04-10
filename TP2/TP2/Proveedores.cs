@@ -8,9 +8,9 @@ namespace TP2
 {
     class Proveedores : Empresa
     {
-        public List <MateriaPrima> MateriasPrimas;
+        public List <Productos> MateriasPrimas;
         public string telefono;
-        public CategoriasProv categoria;
+        public Categorias categoria;
     };
     
 }

@@ -8,7 +8,9 @@ namespace TP2
 {
     public class Productos
     {
-        int id;
-        int idCliente;
+        public int ID;
+        public string Descripcion;
+        public int CUITCliente;
+        public Categorias Categoria;
     }
 }

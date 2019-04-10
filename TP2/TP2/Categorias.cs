@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TP2
 {
-    public class Clientes : Empresa
+    public class Categorias
     {
-        public List<Productos> Productos;
-
+        public int id;
+        public string descripcion;
     }
 }

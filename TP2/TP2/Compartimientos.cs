@@ -9,12 +9,9 @@ namespace TP2
 {
     public class Compartimientos
     {
-        int id;
-        public int idProducto;
-        public int idPasillo;
-        public int idLado;
-        
-        bool Estado;
+        public int id;
+        public Productos Producto;
+        public bool Estado;
     }    
 }
 

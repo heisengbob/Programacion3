@@ -8,6 +8,9 @@ namespace TP2
 {
     public class Pasillos
     {
-        Lado lado;
+        public int id;
+        public int lado;
+        public List<Compartimientos> compartimientos;
+        
     }
 }

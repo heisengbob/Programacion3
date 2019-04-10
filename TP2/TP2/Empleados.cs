@@ -8,6 +8,7 @@ namespace TP2
 { 
     class Empleados : Persona
     {
+        public int legajo;
         public int Categoria;
         public float Sueldo;
         public DateTime FIngreso;

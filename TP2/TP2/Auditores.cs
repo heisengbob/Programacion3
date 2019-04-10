@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace TP2
 {
-    public class Clientes : Empresa
+    class Auditores : Persona
     {
-        public List<Productos> Productos;
-
+        public int idCliente;
     }
 }
